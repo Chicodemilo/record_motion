@@ -1,10 +1,26 @@
 # record_motion
 Led lights for your acrylic turntable platter
+This will add motion lights to your Uturn turntable with an acrylic platter. It may fit other turntables with minor modification.
 
-Uses an ESP8266 V3 or similar...
+Make your acrylic platter dance with neato lights!
+https://youtu.be/VuaAFcpJOcc
 
-3d Print Files...
+You'll need...
+A UTurn turntable of the like:
+https://uturnaudio.com/collections/turntables?gclid=CjwKCAjwue6hBhBVEiwA9YTx8K1R8DAbnNDQ_xrps0UxUo1LoKkOilFToAoq-fDiM31Asx8-PvKcGRoCT4sQAvD_BwE
 
-https://www.thingiverse.com/thing:5972962
+The board I used any ESP8266 will do:
+https://www.amazon.com/dp/B09J95SMG7?psc=1&ref=ppx_yo2ov_dt_b_product_details
 
-https://www.printables.com/model/453729-turn-table-leds
+
+LEDs:
+https://www.amazon.com/gp/product/B088FK8NG6/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1
+
+Buttons:
+https://www.amazon.com/dp/B0722LBKV7?psc=1&ref=ppx_yo2ov_dt_b_product_details
+
+Motion Detector:
+https://www.amazon.com/gp/product/B07XF62F9J/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1
+
+And here is a booooring assembly video:
+https://www.youtube.com/watch?v=W-UHvTSCjBU
