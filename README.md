@@ -6,7 +6,7 @@ Make your acrylic platter dance with neato lights!
 https://youtu.be/VuaAFcpJOcc
 
 You'll need...
-A UTurn turntable of the like:
+A UTurn turntable or the like:
 https://uturnaudio.com/collections/turntables?gclid=CjwKCAjwue6hBhBVEiwA9YTx8K1R8DAbnNDQ_xrps0UxUo1LoKkOilFToAoq-fDiM31Asx8-PvKcGRoCT4sQAvD_BwE
 
 The board I used any ESP8266 will do:
