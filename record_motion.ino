@@ -6,7 +6,6 @@
 #define BUTTON1_PIN 5 // GPIO5 (D1)
 #define BUTTON2_PIN 0 // GPIO0 (D3)
 #define LED_PIN 15 // GPIO8 (D8)
-#define ONBOARD_LED_PIN LED_BUILTIN // Onboard LED
 
 // LED Configuration
 #define NUM_LEDS 5
@@ -81,8 +80,6 @@ void loop() {
     lastButton2Press = millis();
   }
   lastButton2State = currentButton2State;
-
-
     switch (ledMode) {
       case 1:
         mode1();
@@ -100,16 +97,15 @@ void loop() {
         mode5();
         break;
     }
-
 }
 
 
 void button1Pressed() {
   motionDetection = !motionDetection;
   if (motionDetection) {
-    digitalWrite(ONBOARD_LED_PIN, LOW);
+    wink(CRGB::Red, 1); // Wink 1 time in red when cycling back to motion detection mode
   } else {
-    blinkOnboardLed(2);
+    wink(CRGB::Orange, 2); // Wink 2 times in red when changing to constantly-on mode
   }
 }
 
@@ -119,21 +115,24 @@ void button2Pressed() {
   if (ledMode > 5) {
     ledMode = 1;
   }
-  // Blink the onboard LED based on the selected mode
-  blinkOnboardLed(ledMode);
+    wink(CRGB::Purple, ledMode); // Wink for the LED mode number of times in blue
 }
 
-
-void blinkOnboardLed(int times) {
-  ledBlinking = true;
-  for (int i = 0; i < times; i++) {
-    digitalWrite(ONBOARD_LED_PIN, HIGH);
-    delay(200);
-    digitalWrite(ONBOARD_LED_PIN, LOW);
-    delay(100);
+// The wink() method makes the LED strip wink with a specified color and number of times.
+// When called with a color and a count, the LED strip winks in the specified color for the specified number of times.
+// - color: The color of the LED wink.
+// - count: The number of times the LED strip will wink.
+void wink(CRGB color, int count) {
+  for (int i = 0; i < count; i++) {
+    fill_solid(leds, NUM_LEDS, color);
+    FastLED.show();
+    delay(110); // Adjust delay time for the duration of the wink
+    fill_solid(leds, NUM_LEDS, CRGB::Black);
+    FastLED.show();
+    delay(110); // Adjust delay time for the interval between winks
   }
-  ledBlinking = false;
 }
+
 
 void fadeLEDs() {
   // Fade effect doesn't really work - fuck it
@@ -343,5 +342,3 @@ void mode5() {
     lastUpdate = millis();
   }
 }
-
-
